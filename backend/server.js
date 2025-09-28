@@ -13,8 +13,9 @@ const bcrypt = require("bcryptjs");
 const app = express();
 app.use(cors({
   origin: [
-    "http://localhost:5173",   // local frontend
-    "https://xexit-5qgl.onrender.com"  // deployed frontend
+    "http://localhost:3000",             // local frontend
+    "https://xexit-5qgl.onrender.com",   // backend itself (not usually needed but safe)
+    "https://x-exit-olive.vercel.app"    // deployed frontend on Vercel
   ],
   credentials: true,
 }));
