@@ -7,13 +7,14 @@ const { sendMail } = require("../utils/mailer");
 // Submit Resignation
 exports.submitResignation = async (req, res) => {
   try {
-    const { lwd, reason, country } = req.body;
+    const { lwd, reason } = req.body;
     const dateObj = new Date(lwd);
+    //console.log(dateObj);
 
     if (dateObj.getDay() === 0 || dateObj.getDay() === 6)
       return res.status(400).json({ message: "Last Working Day cannot be weekend" });
 
-    if (await isHoliday(lwd, country))
+    if (await isHoliday(lwd, 'IN'))
       return res.status(400).json({ message: "Last Working Day cannot be a holiday" });
 
     const resignation = await Resignation.create({

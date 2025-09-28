@@ -31,8 +31,7 @@ jspm_packages/
 .env
 .env.*.local
 
-# Config file containing secrets
-config.js
+
 
 # OS files
 .DS_Store
