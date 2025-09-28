@@ -11,7 +11,13 @@ const bcrypt = require("bcryptjs");
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",   // local frontend
+    "https://xexit-5qgl.onrender.com"  // deployed frontend
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 // Connect to MongoDB
