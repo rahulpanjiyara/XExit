@@ -38,7 +38,8 @@ describe("Backend API Tests for Employee and Admin Role", () => {
         Authorization: `${token}`,
       },
       body: {
-        lwd: "2024-12-26",
+        lwd: "2024-12-27",
+        reason: 'Personal',
       },
     }).then((response) => {
       expect(response.status).to.eq(200);
