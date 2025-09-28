@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://xexit-5qgl.onrender.com/api", // API URL
+  baseURL: "http://localhost:8080/api", // API URL
 });
 
 API.interceptors.request.use((req) => {
